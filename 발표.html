@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>콩나물국 퀴즈</title>
+
+</head>
+<body>
+
+    <img src="https://recipe1.ezmember.co.kr/cache/recipe/2018/10/21/b1a3f537aadca6e12f45b21aaca2a7981.jpg" alt="콩나물국" 
+         style="width: 300px; border-radius: 8px;">
+
+         <h2>콩나물국 끓이는 순서 고르기</h2>
+
+         <p>아래 문장을 읽고 정확한 순서를 넣으세요</p>
+
+         <ol>
+            <li> 콩나물을 냄비에 넣고 뚜겅을 덮은 뒤 끓인다</li>
+            <li> 소금으로 간을 한다</li>
+            <li> 냄비에 물과 멸치다시마육수를 넣는다</li>
+            <li> 다진마늘, 다진파, 멸치액젓을 넣는다 </li>
+         </ol>
+
+         <label>
+            순서를 입력하세요: 
+            <input type ='text' id="answer" placeholder="예시: 1234">
+            <button id="check">정답확인하기</button>
+         </label>
+         <p id="result"></p>
+
+         <script>
+            const first = '3142'
+            $answer =document.querySelector('#answer');
+            $button =document.querySelector('#check');
+            $result =document.querySelector('#result');
+
+            $button.addEventListener('click', () => {
+                const wow = $answer.value;
+                const transform = wow.replaceAll(' ', '');
+
+                if (transform === first) {
+                    $result.textContent = '정답입니다'
+                    $result.style.color = 'green'
+                } 
+                else {
+                    $result.textContent = '오답입니다'
+                    $result.style.color = 'red'
+                }
+            })
+         </script>
+</body>
+</html>
